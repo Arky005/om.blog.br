@@ -1,0 +1,302 @@
+body{
+	margin:0px;
+	font-family:Michroma;
+	overflow-x: hidden;
+	z-index:-1;
+}
+
+.scale1{
+	transform:scale(1) !important;
+}
+
+.botao {
+	transition: transform 1s;
+}
+
+header{
+	display:flex;
+	flex-flow:row;
+	background-color:white;
+	color:black;
+	box-shadow:0 1px 2px rgba(0,0,0,0.3);
+	height:80px;
+	user-select:none;
+	align-items:center;
+}
+
+#logo-container{
+	display:flex;
+	height:80;
+	width:150px;
+	justify-content:center;
+	align-items:center;
+	margin-left:50px;
+}
+
+#logo {
+	font-size:30;
+	
+}
+
+#menu-header{
+	width:80%;
+	display:flex;
+	flex-flow:row;
+	overflow:hidden;
+	margin-left:80px;
+	
+}
+
+.menu-item{
+	font-size:15;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding-left:30px;
+	padding-right:30px;
+	height:80;
+	
+}
+
+#redes-container{
+	width:70%;
+	display:flex;
+	justify-content:center;
+	margin: 20px 30px 20px 30px;
+}
+
+.rede-social{
+	background-size:100% 100%;
+	height:30;
+	width:30;
+	margin: 0px 10px 0px 10px;
+}
+
+#redes-insta{
+	background-image: url('https://om.blog.br/imgs/insta.png');
+}
+
+#redes-fb{
+	background-image: url('https://om.blog.br/imgs/fb.png');
+}
+
+#redes-git{
+	background-image: url('https://om.blog.br/imgs/git.png');
+}
+
+
+#redes-linkedin{
+	background-image: url('https://om.blog.br/imgs/linkedin.png');
+}
+
+#botao-menu{
+	position:absolute;
+	top: 24px;
+	right: 25px;
+	background-image: url('https://om.blog.br/imgs/menu-icon.png');
+	background-size:100% 100%;
+	font-size:35;
+	visibility:hidden;
+	height:36;
+	width:36;
+}
+
+.botao:hover {
+	background-color:rgb(240,240,240);
+	color:black;
+	transform: scale(1.05);
+}
+
+.link-botao{
+	display:block;
+	text-decoration:none;
+	color:black;
+}
+
+#conteudo-container{
+	width:70%;
+	display:flex;
+	margin: 0px 30px;
+	justify-content:center;
+	flex-wrap:wrap;
+	background-color:white;
+	color:black;
+	border-radius:10px;
+	box-shadow:0px 1px 5px grey;
+}
+
+#site-container{
+	display:flex;
+	flex-wrap:wrap;
+	transform: scale(0.1);
+	transition: transform 500ms;
+}
+
+#sidemenu-container{
+	display:flex;
+	width: calc(30% - 90px);
+	background-color:white;
+	color:black;
+	box-shadow:0px 0px 5px grey;
+	border-radius:10px;
+	align-items:center;
+	flex-wrap:wrap;
+	flex-flow:column;
+	
+}
+
+#titulo-conteudo{
+	font-size:25;
+	width:100%;
+	text-align:center;
+	margin-top:40px;
+}
+
+.titulo-projeto{
+	margin:auto;
+	font-size:16;
+}
+
+.projeto{
+	margin:30px;
+	height:300px;
+	flex-shrink:1;
+	width:500px;
+/*	border:1px solid grey;*/
+	border-radius:20px;
+	transform:scale(0.1);
+	transition: all 2s;
+	display:flex;
+	flex-flow:column;
+	align-items:center;
+}
+
+.projeto:hover{
+	transform: scale(1) !important;
+	transition: transform .5s;
+}
+
+.imagem-descricao{
+	height:90%;
+	width:100%;
+	background-size: 100% 100%;
+	border-radius:20px;
+}
+
+.linguagem-descricao {
+	position:absolute; 
+	margin:20px; 
+	right:0; 
+	bottom:0;
+	width:70px;
+	height:70px;
+	background-color:white;
+	border-radius:100%;
+}
+
+.texto-descricao{
+	color:white;
+	margin:10px;
+	
+}
+
+.fundo-descricao {
+	position:absolute;
+	top:10%;
+	left:0;
+	width:100%;
+	height:90%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	opacity:0;
+	transition: opacity 1s;
+	background-color:rgba(0, 0, 0, 0.5);
+	border-radius:20px;
+}
+
+.fundo-descricao:hover{
+	opacity:1 !important;
+}
+
+#botao-login {
+	display:flex;
+	align-items:center;
+	margin-left:auto;
+	margin-right:40px;
+	align-self:center;
+	justify-content:center;
+	height:60;
+	width:100px;
+	color:white;
+	text-decoration:none;
+}
+
+#botao-login:hover {
+	color:black;
+}
+
+
+@media screen and (max-width:1000px) {
+	
+	#logo-container	{
+		
+		margin-left:0;
+	}
+	
+	.projeto{
+		transition: transform .5s;
+	}
+	
+	.projeto:not(:hover){
+		transform: scale(1);
+	}
+	
+	header{
+		flex-wrap:wrap;
+		min-height:80px;
+		height:auto;
+		
+	}
+	
+	.menu-item {
+		margin:auto;
+		padding:0;
+		width:100%;
+		height:60px;
+	}
+	
+	#menu-header{
+		display:none;
+		flex-flow:column;
+		width:100%;
+		margin:0;
+	}
+	
+	#botao-menu{
+		visibility:visible;
+	}
+	
+	#redes-container{
+		width:100%;
+	}
+	
+	#conteudo-container{
+		margin: 0px 15px;
+		width: calc(100% - 30px);
+		
+	}
+	
+	#sidemenu-container{
+		margin: 20px 15px;
+		width: calc(100% - 30px);
+		min-height:500px;
+	}
+	
+	#botao-login{
+		display:none;
+	}
+	
+	
+}

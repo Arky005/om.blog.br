@@ -1,0 +1,4 @@
+<Files "omdb.php">
+deny from all
+</Files>
+

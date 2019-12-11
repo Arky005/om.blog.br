@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>OM Login</title>
+		<link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+		<style>
+			body{
+				display:flex;
+				margin:0;
+				background-color:#2a292b;
+				justify-content:center;
+				font-family:Michroma;
+			}
+			
+			#container{
+			    width:300;
+			    height:250;
+			    background-color:white;
+				display:flex;
+				flex-flow:column;
+				align-items:center;
+				margin-top:100px;
+			}	
+			
+			#titulo {
+			    margin-top:15;
+				font-size:40;
+				color:black;
+				margin-bottom:25px;
+			}
+			
+			.campo-texto{
+				width:200px;
+				margin-bottom:20px;
+			}
+			
+			#botaoLogin{
+				padding:10;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<form action="loginhome" method="POST">
+			<div id="container">
+				<span id="titulo">OM.</span>
+				<input type="text" class="campo-texto" placeholder="Usuário" name="login">
+				<input type="password" class="campo-texto" placeholder="Senha" name="senha">
+				<button id="botaoLogin" type="submit">Login</button>
+			</div>
+		</form>
+	</body>
+</html>

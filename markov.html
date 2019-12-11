@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('#tamanho-matriz').on('input', function() {
+					var tamanho = $('#tamanho-matriz').val();
+					var i, j, linha, celula;
+					
+					$("#resultado-container").html("");
+					
+					if(tamanho>=2 && tamanho<=15){ //2-15
+						$("#inputs-container").html("");
+						for(i=0; i<tamanho; i++)
+						{
+							///////// Criacao das linhas
+							linha="linha"+i;
+							$("#inputs-container").append("<div id='"+linha+"' class='linha-container'>");
+							
+							for(j=0; j<tamanho; j++){
+							
+								///////// Criacao dos campos
+								celula = $("<input type='number' class='campoNumero' id='celula"+i+j+"'>");
+								$("#"+linha).append(celula);
+								
+							}	
+						}
+					} else $("#inputs-container").html("<span style='color:red'>Tamanho inválido.</span>"); 
+				});
+			});
+			
+			function calcular(){
+				var tamanho = $('#tamanho-matriz').val();
+				var passos = $('#passos').val();
+				$("#resultado-container").html("");
+				if(tamanho>=2 && tamanho<=15 && passos>=2 && passos<=50){ //2-15 2-50
+				/*
+					j j j 
+					
+				i	1 2 3 
+				i	4 5 6  
+				i	7 8 9  
+					*/
+					var i, j, linhaResultado, celulaResultado;
+					
+					$("#resultado-container").html("Resultado:");
+					
+					for(i=0; i<tamanho; i++){
+					
+						///////// Criacao das linhas de resultado
+						linhaResultado="linhaRes"+i;
+						$("#resultado-container").append("<div id='"+linhaResultado+"' class='linha-container'>");
+						
+						for(j=0; j<tamanho; j++){
+							
+							///////// Criacao dos campos de resultado
+							celulaResultado = $("<input type='number' class='campoNumero' id='resultado"+i+j+"' readonly>");
+							$("#"+linhaResultado).append(celulaResultado);
+							
+							
+							
+						}
+						
+					}
+					
+				} else alert("Insira valores válidos. \n 2<=tamanho<=15 \n 2<=passos<=50");
+			}
+		</script>
+		
+		<style>
+			body{
+				font-family:sans-serif;
+			}
+		
+			.campoNumero{
+				width:50;
+			}
+			
+			#principal-container{
+				display:flex;
+				width:100%;
+				justify-content:center;
+			}
+			
+			#inputs-container, #resultado-container{
+				display:flex;
+				flex-flow:column;
+				margin-bottom:20px;
+				align-items:center;
+			}
+			
+			#campos-container{
+				display:flex;
+				flex-flow:column;
+				align-items:center;
+			}
+			
+			.linha-container{
+				display:flex;
+			}
+			
+			#botao{
+				margin-bottom:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="principal-container">
+			<div id="campos-container">
+				Tamanho da matriz de transição:
+				<input type="number" min="2" max="10" value="2" class="campoNumero" id="tamanho-matriz"><br>
+				Quantidade de passos:
+				<input type="number" min="2" max="50" value="2" class="campoNumero" id="passos">
+				<span style="margin-top:20">Matriz de transição:</span>
+				<div id="inputs-container">
+					<div id="linha0" class="linha-container">
+						<input type="number" class="campoNumero" id="celula00">
+						<input type="number" class="campoNumero" id="celula01">
+					</div>
+					<div id="linha1" class="linha-container">
+						<input type="number" class="campoNumero" id="celula10">
+						<input type="number" class="campoNumero" id="celula11">
+					</div>
+				</div>
+				<button id="botao" onclick="calcular()">Calcular</button>
+				<div id="resultado-container"></div>
+			</div>
+		</div>
+	</body>
+</html>
